@@ -133,8 +133,8 @@ const Todo = ({ handleLogout }: TodoProps) => {
                 Update
               </button>
             )}
-            <button onClick={() => deleteTodo(todo.id)} className="action-button delete-button">
-              X
+            <button onClick={() => deleteTodo(todo.id)} className="button-todo cancel-button">
+              Cancel
             </button>
           </li>
           ))}

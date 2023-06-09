@@ -1,5 +1,8 @@
+:root{
+    overflow-x: hidden;
+}
+
 .todo{
-    overflow-y: hidden;
     height: 100vh;
     width: 100%;
 
@@ -90,12 +93,19 @@
     align-items: center;
     width: fit-content;
     min-width: 400px;
+    max-width: 800px;
     color:black;
+    background-color: #fff4;
     margin: 20px;
     padding: 8px;
-    background-color: #fff4;
-    border-radius: 4px;
-    height: 30px;
+    border-radius: 20px;
+    height: fit-content;
+    min-height: 30px;
+  }
+
+  .todo-text.completed {
+    text-decoration: line-through;
+    text-decoration-color: #fff ;
   }
   
 .todo-list{
@@ -108,10 +118,6 @@
 
 }
 
-.todo-item{
-border-radius: 20px;
-
-}
 .radio-button{
     width: 20px;
     margin-right: 200px;
@@ -120,14 +126,20 @@ border-radius: 20px;
 .todo-text{
     margin: 0;
     padding: 0;
-    display: flex;
+   display: flex;
+   height: fit-content;
+   max-width: 200px;
    justify-content: left;
+
 }
 
 
 
 
-@media screen and (max-width: 480px) {
+@media (max-width: 480px) {
+    .todo{
+        overflow-x: hidden;
+    }
     .logout{
         margin-top:20px;
         margin-left: 50px;
@@ -148,28 +160,11 @@ border-radius: 20px;
 }
 
 
+@media  (max-width:800px){
+    .todo{
+        overflow-x: hidden;
+     }
 
-@media screen and (max-width:1024px){
-    .logout{
-        margin-top:20px;
-        margin-left: 50px;
-    }
-
-    .input-todo{
-        margin-left: -80px;
-    }
-
-    .button-todo{
-        width: 50px;
-        font-size: xx-small;
-        margin-left: 10px;
-    }
-
-    .todo-div{
-        margin-left: 10px;
-    }
-}
-@media screen and (max-width:800px){
     .logout{
         margin-top:30px;
         margin-left: 40px;
@@ -177,14 +172,35 @@ border-radius: 20px;
 
     .input-todo{
         margin-left: 10px;
+        overflow-x: hidden;
     }
     .button-todo{
-        width: 80px;
-        font-size: medium;
+        width: 40px;
+        font-size: xx-small;
         margin-left: 10px;
     }
     .todo-div{
         margin-left: 10px;
     }  
+
+    .todo-item{
+        min-width: 200px;
+     
+    }
+    .todo-label{
+        width: 50px;
+     }
+
+    .todo-list{
+        margin-left: 0;
+        padding-left: 0;
+        width: 200px;
+        height: 50px;
+    }
+    .update-button{
+        margin-left:40px;
+    }
 }
+
+
 
