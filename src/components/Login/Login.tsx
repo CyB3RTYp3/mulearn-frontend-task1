@@ -10,12 +10,12 @@ import { useState } from 'react';
 
   const Login = ({ handleLogin, loggedIn }: Props) => {
     const navigate = useNavigate();
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
   
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      handleLogin(email, password);
+      handleLogin(username, password);
       navigate('/todo');
     }
   
@@ -29,15 +29,15 @@ import { useState } from 'react';
       <div className="login-div">
       <h1>Login In</h1>
         <form className='form' onSubmit={handleSubmit}>  
-          <label htmlFor="fname">Email</label>
+          <label htmlFor="fname">Username</label>
           <br />
           <input
             className="input"
-            type="email"
+            type="text"
             id="fname"
-            name="email"
-            value={email}
-            onChange={(e)=>setEmail(e.target.value)}
+            name="username"
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
           />
           <br />
           <label htmlFor="lname">Password</label>

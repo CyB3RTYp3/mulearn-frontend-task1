@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import './Signup.css';
 
  function Signup() {
-  const [name, setName] = useState('');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [phone,setPhone] =useState('');
   const [password, setPassword] = useState('');
@@ -16,9 +16,9 @@ import './Signup.css';
     e.preventDefault();
 
     if(password!=''){
-    const user = { name, email,password };
+    const user = { username, email,password };
     localStorage.setItem('user', JSON.stringify(user));
-    if(name!=='' && email!=='' && password!=='') {
+    if(username!=='' && email!=='' && password!=='') {
       navigate('/');
     }
   }
@@ -35,8 +35,8 @@ import './Signup.css';
           <input
             className="input-signup"
             type="text"
-            value={name}
-            onChange={(e)=>setName(e.target.value)}
+            value={username}
+            onChange={(e)=>setUsername(e.target.value)}
             id="fname"
             name="name"
             placeholder='Username'

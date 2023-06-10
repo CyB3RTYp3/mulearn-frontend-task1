@@ -16,10 +16,10 @@ function Routing() {
     }
   }, []);
 
-  const handleLogin = (email: string, password: string) => {
+  const handleLogin = (username: string, password: string) => {
     const storedUser = JSON.parse(localStorage.getItem('user') || 'null');
 
-    if (storedUser && storedUser.email === email && storedUser.password === password) {
+    if (storedUser && storedUser.username === username && storedUser.password === password) {
       const user = { ...storedUser, loggedIn: true };
       localStorage.setItem('user', JSON.stringify(user));
       setLoggedIn(true);
