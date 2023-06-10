@@ -54,8 +54,9 @@ input{
     height: 30px;
 }
 
-a{
+.p-login{
     display: flex;
+    color: #025464;
     justify-content: right;
     font-size: larger;
     margin: 40px;

@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom'
+import {Link, useNavigate } from 'react-router-dom'
 import './login.css'
 import { useState } from 'react';
 
@@ -54,7 +54,8 @@ import { useState } from 'react';
           <button type='submit' className="login-btn">Login</button>
           
         </form>
-        <a onClick={()=>{navigate('./signup')}} >SignUp?</a>
+         <Link to='/signup' style={{ textDecoration: 'none' }}><p className='p-login' >SignUp?</p></Link>
+        {/* onClick={()=>{navigate('./signup')} */}
         
       </div>
     </div>
