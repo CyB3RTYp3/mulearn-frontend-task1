@@ -67,6 +67,7 @@ const Todo = ({ handleLogout }: TodoProps) => {
 
     return (
     <div className='todo'>
+          <div className='image-todo'>
         <div className='header'>
          <h1 className='h1'>Todo-List</h1>
          <button className='logout' onClick={handleLogout}>Log out</button>
@@ -103,6 +104,10 @@ const Todo = ({ handleLogout }: TodoProps) => {
           </>
           )}
         </div>
+        <br />
+        <br />
+        </div>
+
          <ul className="todo-list">
             {todos.map((todo) => (
                 <li key={todo.id} className={`todo-item ${todo.completed ? 'completed' : ''}`}>

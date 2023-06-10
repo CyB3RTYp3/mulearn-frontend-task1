@@ -5,7 +5,13 @@
 .todo{
     height: 100vh;
     width: 100%;
+    
 
+}
+
+.image-todo{
+   background-image: url(../../images/yellow.png);
+   min-width:500px ;
 }
 
 .header{ 
@@ -15,6 +21,7 @@
     justify-content: center;
     display: flex;
     flex-direction: row;
+   
   
 }
 .h1{
@@ -67,13 +74,6 @@
     font-weight: bold;
   }
 
-.delete-button{
-    background-color: red;
-    color: black;
-    border-radius: 10px;
-    margin: 30px;
-    border-style: none;
-}
 
 .update-button{
     background-color: #025464;
@@ -90,15 +90,13 @@
 
 .todo-item {
     display: flex;
-    align-items: center;
+    justify-content: space-evenly;
     width: fit-content;
-    min-width: 400px;
-    max-width: 800px;
+    width: 800px;
     color:black;
     background-color: #fff4;
-    margin: 20px;
+    margin:0 20px 3px 20px;
     padding: 8px;
-    border-radius: 20px;
     height: fit-content;
     min-height: 30px;
   }
@@ -169,7 +167,10 @@
         margin-top:30px;
         margin-left: 40px;
     }
-
+    
+    .image-todo{
+        min-width:300px;
+    }
     .input-todo{
         margin-left: 10px;
         overflow-x: hidden;
@@ -184,8 +185,16 @@
     }  
 
     .todo-item{
-        min-width: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 300px;
+        margin-left: 0px;
+        max-width:400px;
      
+    }
+    .todo-text{
+        min-height: 100px;
+        width: 100px;
     }
     .todo-label{
         width: 50px;
