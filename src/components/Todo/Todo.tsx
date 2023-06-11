@@ -40,6 +40,7 @@ const Todo = ({ handleLogout }: TodoProps) => {
   const deleteTodo = (id: number) => {
     const updatedTodos = todos.filter((todo) => todo.id !== id);
     setTodos(updatedTodos);
+    alert("todo deleted")
   };
 
   const toggleTodoStatus = (id: number) => {
@@ -57,6 +58,7 @@ const Todo = ({ handleLogout }: TodoProps) => {
     setTodos(updatedTodos);
     setSelectedTodo(null);
     setNewTodo('');
+    alert("todo updated")
   };
 
   const cancelUpdate = () => {
@@ -139,7 +141,7 @@ const Todo = ({ handleLogout }: TodoProps) => {
               </button>
             )}
             <button onClick={() => deleteTodo(todo.id)} className="button-todo cancel-button">
-              Cancel
+              delete
             </button>
           </li>
           ))}

@@ -10,19 +10,23 @@ import './Signup.css';
   const navigate = useNavigate();
 
 
-
-
    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  e.preventDefault();
 
-    if(password!=''){
-    const user = { username, email,password };
+  const existingUser = JSON.parse(localStorage.getItem('user') || 'null');
+
+  if (existingUser.username==username || existingUser.email==email) {
+    alert('User already exists');
+    return;
+  }
+
+  if (password !== '') {
+    const user = { username, email, password };
     localStorage.setItem('user', JSON.stringify(user));
-    if(username!=='' && email!=='' && password!=='') {
+    if (username !== '' && email !== '' && password !== '') {
       navigate('/');
     }
   }
-
 };
 
   return (

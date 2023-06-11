@@ -36,6 +36,7 @@ function Routing() {
       localStorage.setItem('user', JSON.stringify(user));
       setLoggedIn(false);
     }
+    alert("successfully logged out")
   };
 
   return (
