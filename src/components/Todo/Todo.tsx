@@ -66,13 +66,24 @@ const Todo = ({ handleLogout }: TodoProps) => {
     setNewTodo('');
   };
 
+  const countActiveTodos = () => {
+    return todos.filter((todo) => !todo.completed).length;
+  };
+
+  const countCompletedTodos = () => {
+    return todos.filter((todo) => todo.completed).length;
+  };
 
     return (
     <div className='todo'>
+        
           <div className='image-todo'>
+            <div className='log-div'>
+          <button className='logout' onClick={handleLogout}>Log out</button>  
+            </div>
         <div className='header'>
-         <h1 className='h1'>Todo-List</h1>
-         <button className='logout' onClick={handleLogout}>Log out</button>
+         {/* <h1 className='h1'>Todo-List</h1> */}
+         
         </div>
         <div className="todo-div">
         {selectedTodo ? (
@@ -144,8 +155,16 @@ const Todo = ({ handleLogout }: TodoProps) => {
               delete
             </button>
           </li>
+          
           ))}
+          <li className='task'>
+          <div className="footer">
+          <span>{countActiveTodos()} todos left</span>
+          <span>{countCompletedTodos()} completed</span>
+        </div>
+          </li>
         </ul>
+       
     </div>
    
   )
